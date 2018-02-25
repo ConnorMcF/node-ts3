@@ -1,0 +1,21 @@
+{
+  "name": "ts3",
+  "version": "0.1",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "teamspeak",
+    "teamspeak3",
+    "ts",
+    "ts3",
+    "serverquery"
+  ],
+  "author": "Connor McFarlane <connormcf@0x0.ltd> (https://connormcf.com)",
+  "license": "MIT",
+  "dependencies": {
+    "parse-duration": "^0.1.1"
+  }
+}
