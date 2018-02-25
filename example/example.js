@@ -12,7 +12,7 @@ ts.connect('127.0.0.1', 10011)
 		ts.setName('node-ts3')
 
 		ts.subscribe('server')
-		ts.subscribe('channel', 1)
+		ts.subscribe('channel', 0)
 		ts.subscribe('textprivate')
 	})
 
