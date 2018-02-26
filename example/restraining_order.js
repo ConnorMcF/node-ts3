@@ -8,9 +8,9 @@
 const TS3 = require('../index') // require('ts3')
 
 // nick or UUID
-const RESTRAIN_AGAINST = "bad_person"
+const RESTRAIN_AGAINST = "ConnorMcF1"
 // nick or UUID
-const RESTRAIN_FOR = "other_person"
+const RESTRAIN_FOR = "ConnorMcF"
 // stay x channels apart :^)
 const RESTRAIN_DISTANCE = 2
 // join msg
@@ -19,7 +19,9 @@ const WELCOME_MESSAGE = "Stay away from " + RESTRAIN_FOR + ". :^)"
 const MOVE_MESSAGE = "Too close to " + RESTRAIN_FOR + "!"
 
 // create a new instance of node-ts3
-const ts = new TS3()
+const ts = new TS3({
+	debug: true
+})
 
 // connect to the server
 ts.connect('127.0.0.1', 10011)
@@ -60,16 +62,21 @@ ts.on('clientMove', (ev) => {
 	let clientFor = ts.clients.find((cl) => cl.nick == RESTRAIN_FOR || cl.uuid == RESTRAIN_FOR)
 	let clientAgainst = ts.clients.find((cl) => cl.nick == RESTRAIN_AGAINST || cl.uuid == RESTRAIN_FOR)
 
+	// find index of channels
+	let forChannel = ts.channels.indexOf(clientFor.channel)
+	let againstChannel = ts.channels.indexOf(clientAgainst.channel)
+
+	// they aren't both online, we don't care
+	if(!clientFor || !clientAgainst) { return }
+
 	// how many channels apart are they
-	let distance = Math.abs(clientFor.channel.order - clientAgainst.channel.order)
+	let distance = Math.abs(forChannel - againstChannel)
 
 	// uh oh, too close!
 	if(distance <= RESTRAIN_DISTANCE) {
-		// find index of channel
-		let forChannel = ts.channels.indexOf(clientFor.channel)
-
+		
 		// find a suitable channel to move them to
-		let moveChanUp = ts.channels[forChannel + RESTRAIN_DISTANCE]
+		let moveChanUp = ts.channels[forChannel - RESTRAIN_DISTANCE]
 		let moveChanDown = ts.channels[forChannel + RESTRAIN_DISTANCE]
 
 		// decide which one to use and move them
