@@ -1,0 +1,10 @@
+{
+    "name": "node-ts3",
+    "description": "Teamspeak 3 queryserver library",
+    "version": "0.0.1",
+    "url": "http://github.com/connormcf/node-ts3",
+    "options": {
+        "outdir": "./docs/build",
+        "themedir": "./docs/theme"
+    }
+}

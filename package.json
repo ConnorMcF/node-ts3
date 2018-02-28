@@ -1,10 +1,11 @@
 {
   "name": "ts3",
-  "version": "0.0.1",
-  "description": "",
+  "version": "1.0.0",
+  "description": "An abstracted Teamspeak 3 serverquery client",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "doc": "./node_modules/.bin/yuidoc ."
   },
   "keywords": [
     "teamspeak",
@@ -17,5 +18,8 @@
   "license": "MIT",
   "dependencies": {
     "parse-duration": "^0.1.1"
+  },
+  "devDependencies": {
+    "esdoc-standard-plugin": "^1.0.0"
   }
 }

@@ -1,8 +1,6 @@
 const TS3 = require('../index') // require('ts3')
 
-const ts = new TS3({
-	debug: true
-})
+const ts = new TS3()
 
 ts.connect('127.0.0.1', 10011)
 	.then(async () => {
@@ -29,7 +27,6 @@ ts.on('clientLeave', (ev) => {
 
 ts.on('clientMove', (ev) => {
 	console.log('moved', ev.channel)
-	console.log(ts.channels)
 })
 
 ts.on('clientMessage', (ev) => {

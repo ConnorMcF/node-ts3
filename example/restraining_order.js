@@ -8,9 +8,9 @@
 const TS3 = require('../index') // require('ts3')
 
 // nick or UUID
-const RESTRAIN_AGAINST = "ConnorMcF1"
+const RESTRAIN_AGAINST = "bad_person"
 // nick or UUID
-const RESTRAIN_FOR = "ConnorMcF"
+const RESTRAIN_FOR = "not_so_bad_person"
 // stay x channels apart :^)
 const RESTRAIN_DISTANCE = 2
 // join msg
@@ -19,9 +19,7 @@ const WELCOME_MESSAGE = "Stay away from " + RESTRAIN_FOR + ". :^)"
 const MOVE_MESSAGE = "Too close to " + RESTRAIN_FOR + "!"
 
 // create a new instance of node-ts3
-const ts = new TS3({
-	debug: true
-})
+const ts = new TS3()
 
 // connect to the server
 ts.connect('127.0.0.1', 10011)
