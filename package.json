@@ -1,6 +1,6 @@
 {
   "name": "ts3",
-  "version": "1.0.1",
+  "version": "1.0.1-1",
   "description": "An abstracted Teamspeak 3 serverquery client",
   "main": "index.js",
   "scripts": {
@@ -16,6 +16,10 @@
   ],
   "author": "Connor McFarlane <connormcf@0x0.ltd> (https://connormcf.com)",
   "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/connormcf/node-ts3.git"
+  },
   "dependencies": {
     "parse-duration": "^0.1.1"
   },

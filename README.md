@@ -30,7 +30,7 @@ ts.connect('127.0.0.1', 10011)
 	})
 
 ts.on('clientJoin', (ev) => {
-	ev.client.message('Hello ' + cv.client.nick + '!')
+	ev.client.message('Hello ' + ev.client.nick + '!')
 })
 ```
 
